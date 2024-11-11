@@ -1,0 +1,52 @@
+import { Personaje } from "./Personaje";
+
+export class Defensores Centrales y laterales extends Personaje {
+    //atributos
+    protected defender : number = 50;
+
+    //constructor
+    constructor(nombre : string){
+        super(nombre);
+    }
+
+    //getter y setter
+    public get defender(): number{
+        return this.Barrida;
+    }
+    public set Defensa(energia : number): void{
+        if(energia != undefined && energia >= 0){
+            this.energia = energia;
+        }
+    }
+
+    //metodos
+    public atacar(): void {
+        console.log(this.nombre + " le quita la pelota al oponente.");
+    }
+
+    public defender(): void {
+        console.log(this.nombre + " se defiende de un ataque por las bandas.")
+    }
+
+    public ataqueMejorado(): void {
+        if(this.nivel >= 2 && this.energia >= 10){
+            console.log(this.nombre + " ha realizado una barrida fuerte.");
+            this.energia -= 10;
+        }else if(this.nivel <= 1){
+            console.log(this.nombre + " necesita ser nivel 2 o superior para realizar su mejor cabezaso a la hora de defender el area. Nivel actual: " + this.nivel);
+        }else {
+            console.log("No dispones de energia suficiente para realizar el cabesazo.")
+        }
+    }
+
+    public subirDeNivel(): void {
+        if(this.nivel < 9){
+            this.nivel++;
+            this.puntosDeVida += 5;
+            this.energia += 5;
+            console.log(this.nombre + " ha subido a nivel " + this.nivel);
+        }else{
+            console.log(this.nombre + " ha alcanzado el nivel maximo. Evoluciona para seguir progresando.")
+        }
+    }
+}
