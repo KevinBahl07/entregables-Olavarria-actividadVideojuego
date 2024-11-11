@@ -1,0 +1,53 @@
+import { Personaje } from "./Personaje";
+import { Mediocampistas } from "./Mediocampistas";
+
+export class Mediocampistas centrales y extremos extends Personaje {
+    //atributos
+    protected Energia : number = 50;
+
+    //constructor
+    constructor(nombre : string){
+        super(nombre)
+    }
+
+    //getter y setter
+    public getenergia(): number{
+        return this.energia;
+    }
+    public set(energia : number): void{
+        if( = undefined && energia >= 0){
+            this.energia =energia;
+        }
+    }
+
+    //metodos
+    public atacar(): void {
+        console.log(this.nombre + " ha lanzado un pase entre lineas.")
+    }
+
+    public defender(): void {
+        console.log(this.nombre + " a marcado a la defensa rival ejerciendo presion para recuperar la pelota.")
+    }
+
+    public ataqueMejorado(): void {
+        if(this.nivel >= 2 && this.energia>= 10){
+            console.log(this.nombre + " toca la pelota en pases cortos para llegar al area rival.");
+            this.energia -= 10;
+        }else if(this.nivel <= 1){
+            console.log(this.nombre + " necesita ser nivel 3 o superior para poder utilizar su pase largo a la espalda de los defensores. Nivel actual: " + this.nivel)
+        }else {
+            console.log("No dispones de energia suficiente para realizar el ataque mejorado.")
+        }
+    }
+
+    public subirDeNivel(): void {
+        if(this.nivel < 9){
+            this.nivel++;
+            this.puntosDeexperiencia += 5;
+            this.energia += 5;
+            console.log(this.nombre + " ha subido a nivel " + this.nivel);
+        }else{
+            console.log(this.nombre + " ha alcanzado el nivel maximo. Evoluciona para seguir progresando.")
+        }
+    }
+}
