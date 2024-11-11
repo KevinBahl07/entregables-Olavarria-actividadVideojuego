@@ -1,0 +1,52 @@
+import { Personaje } from "./Personaje";
+
+export class Arquero extends Personaje{
+    //atributos
+    protected atajar : number = 5;
+
+    //constructor
+    constructor(nombre : string){
+        super(nombre);
+    }
+
+    //getter y setter
+    public get atajar(): number{
+        return this.atajar;
+    }
+    public set atajar(ataja : number): void{
+        if(atajar != undefined && parar pelota >= 0){
+            this.atajar = parar;
+        }
+    }
+
+    //metodos
+    public atajar(): void {
+        console.log(this.nombre + " ha parado una pelota hacia el arco.");
+    }
+
+    public defender(): void {
+        console.log(this.nombre + " atajo con su mano derecha.");
+    }
+
+    public ataqueMejorado(): void {
+        if(this.nivel >= 2 && this.atajo > 0){
+            console.log(this.nombre + " atajo con su mano izquierda.");
+            this.atajo --;
+        }else if(this.nivel <= 1){
+            console.log(this.nombre + " necesita ser nivel 3 o superior para realizar su super atajada. Nivel actual: " + this.nivel);
+        }else {
+            console.log("No dispone del nivel suficiente para lanzarse a hacer su atajada especial.")
+        }
+    }
+
+    public subirDeNivel(): void {
+        if(this.nivel < 9){
+            this.nivel++;
+            this.Experiencia += 5;
+            this.ataja += 2;
+            console.log(this.nombre + " ha subido a nivel " + this.nivel);
+        }else{
+            console.log(this.nombre + " ha alcanzado el nivel maximo. Evoluciona para seguir progresando.")
+        }
+    }
+}
