@@ -1,0 +1,37 @@
+import { Arquero } from "./Arquero";
+import { Defensor} from "./Deefensor";
+import { Mediocampistas } from "./Mediocampistas";
+import { Delanteros } from "./Delanteros";
+
+
+let Arquero = Arquero;
+
+Arquero.Atajar();
+Arquero.defender();
+Arquero.Atajada especial con mano derecha();
+Arquero.subirDeNivel();
+Arquero.atajadaMejorada();
+
+let Defensores = Defensores;
+
+Defensores.atacar();
+Defensores.defender();
+Defensores.ataqueMejorado();
+Defensores.subirDeNivel();
+Defensores.ataqueMejorado();
+
+let Mediocampistas = Mediocampistas;
+
+Mediocampistas.atacar();
+Mediocampistas.defender();
+Mediocampistas.ataqueMejorado();
+Mediocampistas.subirDeNivel();
+Mediocampistas.ataqueMejorado();
+
+let Delanteros = Delanteros;
+
+Delanteros. atacar ();
+Delanteros. Defender ();
+Delanteros. Ataque mejorado ();
+Delanteros. Subir de nivel ();
+Delanteros. Ataque mejorado ();
