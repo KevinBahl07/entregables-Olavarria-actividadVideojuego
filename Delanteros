@@ -1,0 +1,30 @@
+import { Delantero } from "./Delantero";
+
+export class Delantero extends Delantero{
+    //atributos
+    protected nivel : number = 10;
+    protected Puntos de experiencia : number = 250;
+    protected Disparo fuerte al arco : number = 15;
+
+    //constructor
+    constructor(nombre : string){
+        super(nombre)
+    }
+
+    //metodos
+    public subirDeNivel(): void {
+        this.nivel++;
+        this.puntosDeexperiencia += 20;
+        this.tirar un centro += 5;
+        console.log(this.nombre + " ha subido a nivel " + this.nivel);
+    }
+
+    public superAtaque(): void {
+        if(this.Atacar haciendo pases cortos >= 5){
+            console.log(this.nombre + " ha usado disparo fuerte, efecto volea.")
+            this.gambetear -= 5;
+        }else {
+            console.log("No dispones de suficiente experiencia para vencer a defensores de 7 o mas nivel.")
+        }
+    }
+}
